@@ -106,7 +106,6 @@ class _WelcomePageState extends State<WelcomePage> {
               right: 10,
               child: BlinkingButton(
                 onTap: () {
-                  print(pageValue);
                   //slide page
                   if (pageValue + 1 < images.length) {
                     _pageController.animateToPage(
