@@ -1,3 +1,4 @@
+import 'package:cab_app/pages/verification_page.dart';
 import 'package:cab_app/widgets/app_text_bold.dart';
 import 'package:cab_app/widgets/bubble_layer.dart';
 import 'package:cab_app/widgets/constants.dart';
@@ -102,6 +103,8 @@ class _LoginPageState extends State<LoginPage> {
                             ..onTap = () {
                               //handle click of the text
                               print("terms and conditions");
+                              //for testing purpose
+                              Navigator.push(context, MaterialPageRoute(builder: (_) => VerificationPage()));
                             },
                           style: const TextStyle(
                             color: Colors.red,
