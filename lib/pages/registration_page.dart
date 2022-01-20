@@ -1,3 +1,4 @@
+import 'package:cab_app/pages/home_page.dart';
 import 'package:cab_app/widgets/app_text_bold.dart';
 import 'package:cab_app/widgets/bubble_layer.dart';
 import 'package:cab_app/widgets/constants.dart';
@@ -169,7 +170,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             child: ElevatedButton(
                               onPressed: () {
                                 //handle click of button
-                                if (_formKey.currentState!.validate()) {}
+                                //if (_formKey.currentState!.validate()) {}
+                                Navigator.push(context, MaterialPageRoute(builder: (_) => const HomePage()));
                               },
                               child: const Center(
                                 child: Text("Register"),

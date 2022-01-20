@@ -1,3 +1,4 @@
+import 'package:cab_app/pages/home_page.dart';
 import 'package:cab_app/pages/splash_page.dart';
 import 'package:cab_app/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
