@@ -6,6 +6,7 @@ import 'package:cab_app/pages/fragments/wallet_frag.dart';
 import 'package:cab_app/widgets/constants.dart';
 import 'package:cab_app/widgets/my_drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -31,15 +32,38 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      appBar: AppBar(
-        backgroundColor: buttonColor,
-        automaticallyImplyLeading: false,
-        leading: IconButton(
-          onPressed: () {
-            _scaffoldKey.currentState!.openDrawer();
-          },
-          icon: const Icon(
-            Icons.menu,
+      appBar: PreferredSize(
+        preferredSize: Size(MediaQuery.of(context).size.width, 50),
+        child: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color(0xff190E45),
+                Color(0xff5339A5),
+                Color(0xff5E43AE),
+              ],
+            ),
+          ),
+          child: AppBar(
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+            automaticallyImplyLeading: false,
+            leading: IconButton(
+              onPressed: () {
+                _scaffoldKey.currentState!.openDrawer();
+              },
+              icon: const Icon(
+                Icons.menu,
+              ),
+            ),
+            actions: [
+              IconButton(
+                icon: const Icon(
+                  Icons.notifications,
+                ),
+                onPressed: () {},
+              ),
+            ],
           ),
         ),
       ),
