@@ -41,7 +41,7 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Container(
                 height: double.maxFinite,
                 width: double.maxFinite,
-                padding: const EdgeInsets.only(top: 90),
+                padding: const EdgeInsets.only(top: 80),
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
@@ -66,103 +66,96 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
 
                       //text data
-                      Padding(
-                        padding: const EdgeInsets.only(top: 20.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Column(
-                              children: const [
-                                Text(
-                                  "42",
-                                  style: TextStyle(
-                                    color: Color(0xff525F7F),
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: const [
+                          Expanded(
+                            child: ListTile(
+                              title: Text(
+                                "42",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color(0xff525F7F),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
                                 ),
-                                SizedBox(
-                                  height: 5,
+                              ),
+                              subtitle: Text(
+                                "Total Rides",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color(0xff525F7F),
+                                  fontSize: 14,
                                 ),
-                                Text(
-                                  "Total Rides",
-                                  style: TextStyle(
-                                    color: Color(0xff525F7F),
-                                    fontSize: 16,
-                                  ),
-                                ),
-                              ],
+                              ),
                             ),
-                            Column(
-                              children: const [
-                                Text(
-                                  "10",
-                                  style: TextStyle(
-                                    color: Color(0xff525F7F),
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                          ),
+                          Expanded(
+                            child: ListTile(
+                              title: Text(
+                                "10",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color(0xff525F7F),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
                                 ),
-                                SizedBox(
-                                  height: 5,
+                              ),
+                              subtitle: Text(
+                                "Cancelled",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color(0xff525F7F),
+                                  fontSize: 14,
                                 ),
-                                Text(
-                                  "Cancelled",
-                                  style: TextStyle(
-                                    color: Color(0xff525F7F),
-                                    fontSize: 16,
-                                  ),
-                                ),
-                              ],
+                              ),
                             ),
-                            Column(
-                              children: const [
-                                Text(
-                                  "4.5",
-                                  style: TextStyle(
-                                    color: Color(0xff525F7F),
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                          ),
+                          Expanded(
+                            child: ListTile(
+                              title: Text(
+                                "4.5",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color(0xff525F7F),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
                                 ),
-                                SizedBox(
-                                  height: 5,
+                              ),
+                              subtitle: Text(
+                                "Rating",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color(0xff525F7F),
+                                  fontSize: 14,
                                 ),
-                                Text(
-                                  "Rating",
-                                  style: TextStyle(
-                                    color: Color(0xff525F7F),
-                                    fontSize: 16,
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
 
                       //Personal Info
-                      const Padding(
-                        padding: EdgeInsets.only(top: 15.0),
-                        child: Text(
+                      //reducing codes
+                      const ListTile(
+                        title: Text(
                           "DexterTalha",
+                          textAlign: TextAlign.center,
                           style: TextStyle(fontSize: 18),
                         ),
+                        subtitle: Text(
+                          "mycity, mystate",
+                          textAlign: TextAlign.center,
+                        ),
                       ),
-                      const SizedBox(
-                        height: 2,
-                      ),
-                      const Text("mycity, mystate"),
-                      const SizedBox(
-                        height: 2,
-                      ),
+
                       const Text("+91 9876543210"),
                       const Padding(
                         padding: EdgeInsets.only(
                           left: 20,
                           right: 20,
-                          top: 10,
-                          bottom: 10,
+                          top: 5,
+                          bottom: 5,
                         ),
                         child: Divider(
                           thickness: 0.5,
