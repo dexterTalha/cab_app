@@ -158,7 +158,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           bottom: 5,
                         ),
                         child: Divider(
-                          thickness: 0.5,
+                          thickness: 0.3,
                           color: Colors.blueGrey,
                         ),
                       ),
