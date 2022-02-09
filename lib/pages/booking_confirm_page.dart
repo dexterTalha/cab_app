@@ -158,14 +158,14 @@ class _BookingConfirmationPageState extends State<BookingConfirmationPage> {
                           //   ),
                           //   title: Text("Mini Ride"),
                           // ),
-                          Padding(
+                          const Padding(
                             padding: EdgeInsets.only(
                               left: 16,
                               bottom: 10,
                             ),
                             child: Text("4 Person Allowed"),
                           ),
-                          Padding(
+                          const Padding(
                             padding: EdgeInsets.only(
                               left: 16,
                               bottom: 10,
