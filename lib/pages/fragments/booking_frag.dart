@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:cab_app/pages/booking_confirm_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -107,56 +108,71 @@ class _BookingPageState extends State<BookingPage> {
             bottom: 10,
             left: 20,
             right: 20,
-            child: Card(
-              elevation: 6,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(100),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: List.generate(bottomMenus.length, (index) {
-                    return GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          selectedIndex = index;
-                        });
-                      },
-                      child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 600),
-                        height: 50,
-                        padding: const EdgeInsets.only(left: 15, right: 15),
-                        decoration: BoxDecoration(
-                          color: selectedIndex == index ? const Color(0xff3C2593) : Colors.white,
-                          borderRadius: BorderRadius.circular(100),
-                        ),
-                        child: Row(
-                          children: [
-                            selectedIndex == index
-                                ? Icon(
-                                    bottomMenuIcons[index],
-                                    color: Colors.white,
-                                    size: 30,
-                                  )
-                                : Container(),
-                            AnimatedContainer(
-                              duration: const Duration(milliseconds: 300),
-                              width: selectedIndex == index ? 5 : 0,
+            child: Column(
+              children: [
+                Card(
+                  elevation: 6,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(100),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: List.generate(bottomMenus.length, (index) {
+                        return GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              selectedIndex = index;
+                            });
+                          },
+                          child: AnimatedContainer(
+                            duration: const Duration(milliseconds: 600),
+                            height: 50,
+                            padding: const EdgeInsets.only(left: 15, right: 15),
+                            decoration: BoxDecoration(
+                              color: selectedIndex == index ? const Color(0xff3C2593) : Colors.white,
+                              borderRadius: BorderRadius.circular(100),
                             ),
-                            Text(
-                              bottomMenus[index],
-                              style: TextStyle(
-                                color: selectedIndex == index ? Colors.white : const Color(0xff3C2593),
-                              ),
+                            child: Row(
+                              children: [
+                                selectedIndex == index
+                                    ? Icon(
+                                        bottomMenuIcons[index],
+                                        color: Colors.white,
+                                        size: 30,
+                                      )
+                                    : Container(),
+                                AnimatedContainer(
+                                  duration: const Duration(milliseconds: 300),
+                                  width: selectedIndex == index ? 5 : 0,
+                                ),
+                                Text(
+                                  bottomMenus[index],
+                                  style: TextStyle(
+                                    color: selectedIndex == index ? Colors.white : const Color(0xff3C2593),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                      ),
-                    );
-                  }),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
                 ),
-              ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) => BookingConfirmationPage()));
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: const Color(0xff3C2593),
+                  ),
+                  child: const Center(
+                    child: Text("Ride Now"),
+                  ),
+                )
+              ],
             ),
           )
         ],

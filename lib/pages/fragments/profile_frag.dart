@@ -192,7 +192,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                           leading: Icon(
                             Icons.logout,
-                            color: Colors.red,
+                            color: Color.fromARGB(255, 238, 75, 64),
                           ),
                         ),
                       )
