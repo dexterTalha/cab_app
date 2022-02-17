@@ -7,6 +7,7 @@ import 'package:cab_app/widgets/constants.dart';
 import 'package:cab_app/widgets/my_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:overlay_container/overlay_container.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -25,6 +26,14 @@ class _HomePageState extends State<HomePage> {
     AddressPage(),
     WalletPage(),
   ];
+
+  bool _dropdownShown = false;
+
+  void _toggleDropdown() {
+    setState(() {
+      _dropdownShown = !_dropdownShown;
+    });
+  }
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
 
@@ -62,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                 icon: const Icon(
                   Icons.notifications,
                 ),
-                onPressed: () {},
+                onPressed: _toggleDropdown,
               ),
             ],
           ),
@@ -78,7 +87,45 @@ class _HomePageState extends State<HomePage> {
           });
         },
       ),
-      body: fragments[indexPage],
+      body: Stack(
+        children: [
+          fragments[indexPage],
+          OverlayContainer(
+            show: _dropdownShown,
+            // Let's position this overlay to the right of the button.
+
+            // The content inside the overlay.
+            child: Container(
+              height: MediaQuery.of(context).size.height - 100,
+              width: MediaQuery.of(context).size.width - 32,
+              margin: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: <BoxShadow>[
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    blurRadius: 3,
+                    spreadRadius: 6,
+                  )
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    "Notifications",
+                    style: TextStyle(fontSize: 30),
+                  ),
+
+                  //Try to make yourself.............
+                  //comment down if facing any problem
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

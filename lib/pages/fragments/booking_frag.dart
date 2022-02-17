@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:cab_app/pages/booking_confirm_page.dart';
+import 'package:cab_app/pages/ride_complete_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -163,7 +164,8 @@ class _BookingPageState extends State<BookingPage> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (_) => BookingConfirmationPage()));
+                    //Navigator.push(context, MaterialPageRoute(builder: (_) => BookingConfirmationPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (_) => RideCompletePage()));
                   },
                   style: ElevatedButton.styleFrom(
                     primary: const Color(0xff3C2593),
