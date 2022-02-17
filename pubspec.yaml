@@ -37,6 +37,7 @@ dependencies:
   google_maps_flutter: ^2.1.1
   flutter_rating_bar: ^4.0.0
   overlay_container: ^0.0.5+1
+  flutter_slidable: ^1.2.0
 
 dev_dependencies:
   flutter_test:

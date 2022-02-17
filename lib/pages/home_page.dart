@@ -5,6 +5,7 @@ import 'package:cab_app/pages/fragments/profile_frag.dart';
 import 'package:cab_app/pages/fragments/wallet_frag.dart';
 import 'package:cab_app/widgets/constants.dart';
 import 'package:cab_app/widgets/my_drawer.dart';
+import 'package:cab_app/widgets/notification_blocks.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:overlay_container/overlay_container.dart';
@@ -110,18 +111,7 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
-                    "Notifications",
-                    style: TextStyle(fontSize: 30),
-                  ),
-
-                  //Try to make yourself.............
-                  //comment down if facing any problem
-                ],
-              ),
+              child: NotificationBlock(),
             ),
           ),
         ],
